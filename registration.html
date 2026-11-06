@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Registration Form</title>
+
+    <script>
+
+        function validateForm() {
+
+            var name = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+
+            var namePattern = /^[A-Za-z]+$/;
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            var phonePattern = /^[0-9]{10}$/;
+
+
+            // Name Validation
+            if (!namePattern.test(name)) {
+                alert("Name should contain only alphabets");
+                return false;
+            }
+
+            if (name.length < 6) {
+                alert("Name should not be less than 6 characters");
+                return false;
+            }
+
+
+            // Password Validation
+            if (password.length < 6) {
+                alert("Password should not be less than 6 characters");
+                return false;
+            }
+
+
+            // E-mail Validation
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid E-mail ID");
+                return false;
+            }
+
+
+            // Phone Number Validation
+            if (!phonePattern.test(phone)) {
+                alert("Phone Number must contain exactly 10 digits");
+                return false;
+            }
+
+
+            alert("Registration Successful!");
+
+            return true;
+        }
+
+    </script>
+
+</head>
+
+
+<body bgcolor="white">
+
+<center>
+
+    <h1>Registration Form</h1>
+
+    <form onsubmit="return validateForm()">
+
+        Name:
+        <input type="text" id="name" name="name">
+        <br><br>
+
+
+        Password:
+        <input type="password" id="password" name="password">
+        <br><br>
+
+
+        E-mail ID:
+        <input type="text" id="email" name="email">
+        <br><br>
+
+
+        Phone Number:
+        <input type="text" id="phone" name="phone">
+        <br><br>
+
+
+        Sex:
+        <input type="radio" name="sex" value="male"> Male
+
+        <input type="radio" name="sex" value="female"> Female
+
+        <br><br>
+
+
+        Date of Birth:
+
+        <select name="day">
+
+            <option>Day</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+            <option>27</option>
+            <option>28</option>
+            <option>29</option>
+            <option>30</option>
+            <option>31</option>
+
+        </select>
+
+
+        <select name="month">
+
+            <option>Month</option>
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+
+        </select>
+
+
+        <select name="year">
+
+            <option>Year</option>
+            <option>2000</option>
+            <option>2001</option>
+            <option>2002</option>
+            <option>2003</option>
+            <option>2004</option>
+            <option>2005</option>
+            <option>2006</option>
+            <option>2007</option>
+            <option>2008</option>
+            <option>2009</option>
+            <option>2010</option>
+
+        </select>
+
+        <br><br>
+
+
+        Languages Known:
+        <br>
+
+        <input type="checkbox" name="language" value="English">
+        English
+
+        <input type="checkbox" name="language" value="Telugu">
+        Telugu
+
+        <input type="checkbox" name="language" value="Hindi">
+        Hindi
+
+        <input type="checkbox" name="language" value="Tamil">
+        Tamil
+
+        <br><br>
+
+
+        Address:
+        <br>
+
+        <textarea name="address" rows="5" cols="40"></textarea>
+
+        <br><br>
+
+
+        <input type="submit" value="Submit">
+
+        <input type="reset" value="Reset">
+
+    </form>
+
+</center>
+
+</body>
+
+</html>
